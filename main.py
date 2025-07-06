@@ -14,6 +14,7 @@ import re
 import distro
 import webbrowser
 
+__version__ = "0.1.0"
 
 def open_site(url):
     webbrowser.open(url)
