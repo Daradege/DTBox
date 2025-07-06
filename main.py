@@ -13,8 +13,18 @@ import subprocess
 import re
 import distro
 import webbrowser
+import platform
 
 __version__ = "0.1.0"
+
+if platform.system() in ["Windows", "MacOS", "Linux"]:
+    root = tkinter.Tk()
+    root.title("Not Supported!")
+    ttk.Label(root, text="Sorry but we don't support this OS at the moment!").pack()
+    ttk.Label(root, text="Follow our github for new updates (Daradege/DTBox)").pack()
+    root.mainloop()
+    sys.exit()
+
 
 def open_site(url):
     webbrowser.open(url)
