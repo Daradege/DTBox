@@ -16,7 +16,7 @@ jobs:
     - id: extract
       run: |
         echo "🔍 Extracting version from main.py..."
-        version=$(python -c 'import re; f=open("main.py"); m=re.search(r"__version__\s*=\s*[\"\']([^\"\']+)[\"\']", f.read()); print(m.group(1) if m else "")')
+        version=$(cat version)
         echo "✅ Version: $version"
         echo "version=$version" >> $GITHUB_OUTPUT
         echo "::notice title=Extracted Version::$version"

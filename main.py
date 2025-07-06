@@ -15,8 +15,6 @@ import distro
 import webbrowser
 import platform
 
-__version__ = "0.1.0"
-
 if platform.system() in ["Windows", "MacOS"]:
     root = tkinter.Tk()
     root.title("Not Supported!")
