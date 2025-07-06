@@ -12,10 +12,13 @@ jobs:
       version: ${{ steps.extract_version.outputs.version }}
     steps:
     - uses: actions/checkout@v3
+
     - id: extract_version
       run: |
-        version=$(python -c "import re;f=open('main.py');print(re.search(r'__version__\s*=\s*[\"\\']([^\"\\']+)[\"\\']', f.read()).group(1))")
-        echo "version=$version" >> $GITHUB_OUTPUT
+        ver=$(grep -oP '__version__\s*=\s*["'\'']\K[^"'\''"]+' main.py)
+        echo "✅ Version found: $ver"
+        echo "version=$ver" >> $GITHUB_OUTPUT
+
 
   build-linux:
     needs: get-version

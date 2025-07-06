@@ -17,7 +17,7 @@ import platform
 
 __version__ = "0.1.0"
 
-if platform.system() in ["Windows", "MacOS", "Linux"]:
+if platform.system() in ["Windows", "MacOS"]:
     root = tkinter.Tk()
     root.title("Not Supported!")
     ttk.Label(root, text="Sorry but we don't support this OS at the moment!").pack()
