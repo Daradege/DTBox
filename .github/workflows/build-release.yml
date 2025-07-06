@@ -57,7 +57,7 @@ jobs:
       run: ./appimagetool-x86_64.AppImage AppDir
 
     - name: Upload Linux artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: linux-artifacts
         path: |
@@ -82,7 +82,7 @@ jobs:
       run: pyinstaller --onefile main.py -n DTBox.exe
 
     - name: Upload Windows artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: windows-artifact
         path: dist/DTBox.exe
