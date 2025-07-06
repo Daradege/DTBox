@@ -133,7 +133,7 @@ jobs:
       uses: actions/upload-release-asset@v1
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./windows_artifact/dist/DTBox.exe
+        asset_path: ./windows_artifact/DTBox.exe
         asset_name: DTBox.exe
         asset_content_type: application/octet-stream
       env:
